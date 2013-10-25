@@ -1,0 +1,12 @@
+<h1>Welcome to Ritly!</h1>
+
+<ul>
+  <% @urls.each do |url| %>
+    <li><%= link_to url.hashcode, "/#{url.hashcode}" %></li>
+  <% end %>
+</ul>
+
+<%= form_for @website, url: "/save_a_new_url" do |f| %>
+  <%= f.text_field :url %>
+  <%= f.submit %>
+<% end %>
